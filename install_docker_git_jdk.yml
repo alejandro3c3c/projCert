@@ -1,0 +1,23 @@
+---
+- name: Install and configure Docker and Git
+  hosts: webservers
+  become: yes
+  gather_facts: yes
+  tasks:
+    - name: Install Docker
+      package:
+        name: docker.io
+        state: latest
+    - name: Start Docker service
+      service:
+        name: docker
+        state: started
+        enabled: yes
+    - name: Install Git
+      package:
+        name: git
+        state: present
+    - name: Install JDK
+      package:
+        name: default-jdk
+        state: present
