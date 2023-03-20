@@ -16,8 +16,8 @@
     - name: Install Git
       package:
         name: git
-        state: present
+        state: latest
     - name: Install JDK
       package:
         name: default-jdk
-        state: present
+        state: latest
